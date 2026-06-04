@@ -3,7 +3,7 @@ import { readdir, stat } from 'fs/promises'
 import { join } from 'path'
 
 const ROOTS = ['public/images', 'public']
-const MIN_BYTES = 400_000
+const MIN_BYTES = 80_000
 
 async function walk(dir) {
   let entries

@@ -16,7 +16,7 @@ export function HeroAnimatedMockup({ animated = true }: HeroAnimatedMockupProps)
       alt={heroContent.image.alt}
       width={heroContent.image.width}
       height={heroContent.image.height}
-      quality={95}
+      quality={82}
       sizes="(max-width: 1024px) 92vw, (max-width: 1280px) 46vw, 560px"
       className="site-hero-mockup__img h-auto w-full object-cover object-center"
       priority

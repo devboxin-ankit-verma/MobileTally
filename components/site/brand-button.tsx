@@ -1,6 +1,7 @@
 'use client'
 
 import { m, useReducedMotion } from 'framer-motion'
+import { springSnappy } from '@/lib/motion'
 import { cn } from '@/lib/utils'
 
 type BrandButtonProps = React.ComponentProps<'button'> & {
@@ -19,10 +20,11 @@ export function BrandButton({
   const reduced = useReducedMotion()
 
   const base = cn(
-    'inline-flex min-h-11 cursor-pointer items-center justify-center font-semibold',
-    'rounded-[var(--radius-btn)] transition-all duration-300 ease-out',
+    'site-brand-btn inline-flex min-h-11 cursor-pointer items-center justify-center font-semibold',
+    'rounded-[var(--radius-btn)] transition-[transform,box-shadow,background-color,border-color,color] duration-300 ease-out',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--site-brand)] focus-visible:ring-offset-2',
     'active:scale-[0.98]',
+    reduced && 'hover:-translate-y-0.5 hover:scale-[1.03]',
   )
 
   const variants = {
@@ -49,11 +51,17 @@ export function BrandButton({
     )
   }
 
+  const hoverLift =
+    variant === 'primary' || variant === 'dark'
+      ? { scale: 1.04, y: -3, boxShadow: '0 14px 32px rgba(1, 66, 207, 0.38)' }
+      : { scale: 1.03, y: -2, boxShadow: '0 10px 22px rgba(0, 14, 51, 0.14)' }
+
   return (
     <m.button
       className={classes}
-      whileHover={{ scale: 1.03, y: -1 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={hoverLift}
+      whileTap={{ scale: 0.97, y: 0 }}
+      transition={springSnappy}
       {...props}
     >
       {children}

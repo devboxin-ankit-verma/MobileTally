@@ -40,6 +40,9 @@ export function SiteFooter() {
               alt="MobileTally — Your Tally. In Your Pocket."
               width={240}
               height={88}
+              sizes="(max-width: 768px) 180px, 200px"
+              quality={75}
+              loading="lazy"
               className="site-footer__logo-img h-auto w-full max-w-[200px] object-contain object-left"
             />
           </span>

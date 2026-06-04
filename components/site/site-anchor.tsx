@@ -32,12 +32,14 @@ export function SiteAnchor({ href, className, children, onClick, ...props }: Sit
       return
     }
 
-    if (hasHash && path === '/' && pathname === '/') {
+    if (hasHash && (path === '/' || path === '') && pathname === '/') {
       e.preventDefault()
       const target = document.querySelector(hash)
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' })
         window.history.replaceState(null, '', href)
+      } else {
+        window.location.hash = hash
       }
     }
   }

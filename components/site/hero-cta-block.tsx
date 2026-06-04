@@ -49,8 +49,10 @@ export function HeroCtaBlock({ animated = true }: HeroCtaBlockProps) {
             alt=""
             width={96}
             height={80}
+            sizes="96px"
+            quality={75}
+            loading="lazy"
             className="site-hero-cta__arrow-img"
-            priority
           />
         </div>
 

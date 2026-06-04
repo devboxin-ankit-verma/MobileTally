@@ -70,6 +70,8 @@ export function BrandLogo({
                 size === 'md' && 'max-h-11',
                 size === 'lg' && 'max-h-14',
               )}
+              sizes="(max-width: 640px) 140px, 180px"
+              quality={85}
               priority
             />
             {showSubtitle &&

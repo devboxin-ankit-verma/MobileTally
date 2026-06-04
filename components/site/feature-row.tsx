@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { useReducedMotion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import { BrandButton } from '@/components/site/brand-button'
+import { SiteAnchor } from '@/components/site/site-anchor'
+import { siteLinks } from '@/lib/site-links'
 import { cn } from '@/lib/utils'
 import { useFeatureRowGsap } from '@/hooks/use-feature-row-gsap'
 
@@ -58,9 +60,9 @@ export function FeatureRow({
             alt={alt}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 560px"
-            quality={92}
-            priority={anchorId === 'feature-send-payment-reminder'}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 560px"
+            quality={75}
+            loading="lazy"
           />
         </div>
       </div>
@@ -103,7 +105,11 @@ export function FeatureRow({
         ))}
       </ul>
       <div data-feature-stagger className="pt-2">
-        <BrandButton type="button">{cta}</BrandButton>
+        <SiteAnchor href={siteLinks.contact} className="inline-flex">
+          <BrandButton type="button" className="pointer-events-none">
+            {cta}
+          </BrandButton>
+        </SiteAnchor>
       </div>
     </div>
   )

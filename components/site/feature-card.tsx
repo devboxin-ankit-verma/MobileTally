@@ -27,6 +27,9 @@ export function FeatureCard({ image, alt, title, description }: FeatureCardProps
           alt={alt}
           width={150}
           height={150}
+          sizes="150px"
+          quality={70}
+          loading="lazy"
           className="mx-auto h-auto w-[150px] object-contain transition-transform duration-300 hover:scale-105"
         />
       </div>

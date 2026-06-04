@@ -284,56 +284,70 @@ export const whyTallyBridge = [
   },
 ] as const
 
-/** Pricing plans — Growth, Pro, Pro Plus */
+/** Pricing plans — yearly only; yearlyPrice is final after 30% off; compareAt = price ÷ 0.7 */
 export const pricingPlans = [
   {
-    id: 'growth',
-    displayName: 'GROWTH',
-    monthlyPrice: 358,
-    yearlyPrice: 3000,
+    id: 'silver',
+    displayName: 'Silver',
+    yearlyPrice: 2999,
+    compareAtPrice: 4284,
     highlighted: false,
     ctaSolid: false,
     features: [
-      'Access Accounting Data on Mobile',
-      'Share Ledger & Invoices on WhatsApp',
-      'Track Outstanding Payments',
-      'Automated Payment Reminders',
-      'Sync Unlimited Companies',
-      '20+ Business Reports',
-      'Accounting Data Backup',
+      'View your Tally data securely from anywhere',
+      'Share customer ledgers and invoices instantly',
+      'Monitor pending receivables and payables',
+      'Automatic follow-ups for outstanding payments',
+      'Access multiple company data in one app',
+      '20+ business insights and reports',
+      'Secure cloud backup and synchronization',
     ],
   },
   {
-    id: 'pro',
-    displayName: 'PRO',
-    monthlyPrice: 595,
-    yearlyPrice: 5000,
+    id: 'gold',
+    displayName: 'Gold',
+    yearlyPrice: 4999,
+    compareAtPrice: 7141,
     highlighted: true,
     ctaSolid: true,
-    features: ['Everything in Growth +', 'Create Custom PDF Templates'],
+    features: ['Everything in Silver +', 'Personalized invoice and document formats'],
     featureBox: {
-      title: 'Create Unlimited Vouchers',
+      title: 'Smart Voucher Management',
       items: [
-        'Create business vouchers instantly from your phone & web — No desktop required',
-        'Edit Existing Vouchers Anywhere, Anytime with Mobile',
+        'Create accounting entries directly from mobile',
+        'Record sales, purchases, receipts, and payments',
+        'Modify vouchers anytime, from anywhere',
+        'Real-time synchronization with Tally',
       ],
     },
   },
   {
-    id: 'pro-plus',
-    displayName: 'PRO PLUS',
-    monthlyPrice: 833,
-    yearlyPrice: 7000,
+    id: 'platinum',
+    displayName: 'Platinum',
+    yearlyPrice: 6999,
+    compareAtPrice: 9999,
     highlighted: false,
     ctaSolid: false,
-    features: ['Everything in Pro +'],
-    featureBox: {
-      title: 'E-Way & E-Invoicing',
-      items: [
-        'Instantly Generate E-Way Bills & E-Invoices in One Click — Right from Your Mobile!',
-        'Stay GST Compliant',
-      ],
-    },
+    features: ['Everything in Gold +'],
+    featureBoxes: [
+      {
+        title: 'GST & Compliance Tools',
+        items: [
+          'Generate E-Invoices instantly',
+          'Create E-Way Bills on the go',
+          'Stay compliant with GST requirements',
+        ],
+      },
+      {
+        title: 'Business Operations',
+        items: [
+          'Advanced management reports',
+          'Multi-user business access',
+          'Priority customer assistance',
+          'Branch and company-wise analytics',
+        ],
+      },
+    ],
   },
 ] as const
 

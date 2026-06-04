@@ -89,7 +89,7 @@ export function InnerPageLayout({
             className="site-inner-page__media-img"
 
             sizes="(max-width: 1024px) 100vw, 560px"
-
+            quality={80}
             priority
 
           />

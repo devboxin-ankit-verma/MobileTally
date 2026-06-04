@@ -25,7 +25,23 @@ export const siteLinks = {
   developerbox: siteConfig.developerbox.url,
 
   googleMaps: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.contact.address)}`,
+
+  /** App download */
+  googlePlay: siteConfig.apps.googlePlay,
+  macAppStore: siteConfig.apps.macAppStore,
 } as const
+
+/** WhatsApp with optional pre-filled message */
+export function whatsAppUrl(message: string) {
+  return `${siteLinks.whatsapp}?text=${encodeURIComponent(message)}`
+}
+
+/** Pricing — BUY NOW opens WhatsApp with yearly plan details */
+export function pricingBuyUrl(planName: string) {
+  return whatsAppUrl(
+    `Hi, I would like to purchase the ${siteConfig.name} ${planName} plan (yearly subscription). Please share payment details.`,
+  )
+}
 
 /** Safe attributes for external links */
 export const externalLinkAttrs = {
